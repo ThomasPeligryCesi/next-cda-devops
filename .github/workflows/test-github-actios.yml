@@ -6,5 +6,5 @@ jobs:
     steps:
       - run: ls -lah
       - run: echo "Building the project..." 
-      - use: actions/checkout@v6
+      - uses: actions/checkout@v6
       - run: echo "Building the project... (not yet)" 
