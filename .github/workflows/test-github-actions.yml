@@ -16,7 +16,7 @@ jobs:
             node_modules
             .next
             /home/runner/.cache/Cypress
-          key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
   test:
     strategy:
       fail-fast: false
@@ -32,7 +32,7 @@ jobs:
             node_modules
             .next
             /home/runner/.cache/Cypress
-          key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: echo "Running tests..." 
       - name: Cypress e2e 
         uses: cypress-io/github-action@v7
