@@ -19,7 +19,7 @@ jobs:
           start: npm start              # ← Démarre le serveur (adapte la commande)
           wait-on: "http://localhost:3000"   # ← Attend que le port réponde
           wait-on-timeout: 60
-      - echo: "Running Cypress e2e test on chrome with GitHub Actions..."
+      - run: echo"Running Cypress e2e test on chrome with GitHub Actions..."
       - name: Cypress e2e edge
         uses: cypress-io/github-action@v7
         with:
