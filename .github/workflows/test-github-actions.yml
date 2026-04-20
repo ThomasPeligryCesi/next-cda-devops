@@ -9,8 +9,19 @@ jobs:
       - run: ls -lah
       - run: npm ci
       - run: npm run build
-      - run: npm run e2e:headless
-      - run: echo "Running Cypress e2e test on chrome with GitHub Actions..."
+      - name: Save cache
+        uses: actions/chache/save@v3
+        with:
+          path: |
+            node_modules
+            .next
+          key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v6
+      - run: echo "Running tests..." 
       - name: Cypress e2e chrome
         uses: cypress-io/github-action@v7
         with:
@@ -29,9 +40,3 @@ jobs:
           wait-on: "http://localhost:3000" 
           wait-on-timeout: 60
           
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - run: echo "Running tests..." 
-      - run: echo "Tests passed! (not yet)"
