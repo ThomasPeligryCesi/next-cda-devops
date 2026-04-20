@@ -10,7 +10,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run e2e:headless
-      - run: echo"Running Cypress e2e test on chrome with GitHub Actions..."
+      - run: echo "Running Cypress e2e test on chrome with GitHub Actions..."
       - name: Cypress e2e chrome
         uses: cypress-io/github-action@v7
         with:
@@ -19,7 +19,7 @@ jobs:
           start: npm start              # ← Démarre le serveur (adapte la commande)
           wait-on: "http://localhost:3000"   # ← Attend que le port réponde
           wait-on-timeout: 60
-      - run: echo"Running Cypress e2e test on chrome with GitHub Actions..."
+      - run: echo "Running Cypress e2e test on chrome with GitHub Actions..."
       - name: Cypress e2e edge
         uses: cypress-io/github-action@v7
         with:
