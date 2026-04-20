@@ -21,12 +21,17 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/cache/restore@v5
+        with:
+          path: |
+            node_modules
+            .next
+          key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
       - run: echo "Running tests..." 
       - name: Cypress e2e chrome
         uses: cypress-io/github-action@v7
         with:
           browser: chrome
-          build: npm run build
           start: npm start
           wait-on: "http://localhost:3000"
           wait-on-timeout: 60
@@ -34,8 +39,7 @@ jobs:
       - name: Cypress e2e edge
         uses: cypress-io/github-action@v7
         with:
-          browser: edge
-          build: npm run build          
+          browser: edge     
           start: npm start              
           wait-on: "http://localhost:3000" 
           wait-on-timeout: 60
