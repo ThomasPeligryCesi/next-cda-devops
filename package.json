@@ -10,17 +10,23 @@
     "component:headless": "cypress run --component"
   },
   "dependencies": {
-    "eslint": "^10.2.1",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@eslint/css": "^1.1.0",
+    "@eslint/js": "^9.39.4",
+    "@eslint/json": "^1.2.0",
     "@types/node": "18.0.6",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.0.6",
     "cypress": "12.3.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.5.0",
     "start-server-and-test": "1.15.2",
-    "typescript": "4.7.4"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.2"
   }
 }
