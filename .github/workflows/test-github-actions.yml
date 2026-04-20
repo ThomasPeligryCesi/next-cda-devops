@@ -41,8 +41,7 @@ jobs:
       - name: Cypress e2e edge
         uses: cypress-io/github-action@v7
         with:
-          browser: edge     
-          start: npm start              
+          browser: edge            
           wait-on: "http://localhost:3000" 
           wait-on-timeout: 60
           
