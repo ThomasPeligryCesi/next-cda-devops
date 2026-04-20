@@ -15,6 +15,7 @@ jobs:
           path: |
             node_modules
             .next
+            /home/runner/.cache/Cypress
           key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
   test:
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
           path: |
             node_modules
             .next
+            /home/runner/.cache/Cypress
           key: ${{ runner.obs}} -node-${{ hashFiles('**/package-lock.json') }}
       - run: echo "Running tests..." 
       - name: Cypress e2e chrome
