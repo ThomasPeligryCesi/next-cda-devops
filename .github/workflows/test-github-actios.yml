@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls -lah
-      - run: echo "Hello World"  build:
+      - run: echo "Hello World" 
   build-2:
     runs-on: ubuntu-latest
     steps:
