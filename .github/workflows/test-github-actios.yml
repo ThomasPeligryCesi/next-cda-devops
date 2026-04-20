@@ -7,4 +7,11 @@ jobs:
       - run: ls -lah
       - run: echo "Building the project..." 
       - uses: actions/checkout@v6
-      - run: echo "Building the project... (not yet)" 
+      - run: npm run build
+      - uses: cypress-io/github-action@v7
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "Running tests..." 
+      - run: echo "Tests passed! (not yet)"
