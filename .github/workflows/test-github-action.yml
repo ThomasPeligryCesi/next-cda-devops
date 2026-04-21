@@ -102,9 +102,9 @@ jobs:
           echo "${{ secrets.AZURE_PEM }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.AZURE_IP }} >> ~/.ssh/known_hosts
-      - name: Connexion SSH et exécution de ls
+      - name: Connexion SSH et deploiement
         run: |
-          ssh ${{ secrets.AZURE_USER }}@${{ secrets.AZURE_IP }} << 'EOF'
+          ssh ${{ secrets.AZURE_ID }}@${{ secrets.AZURE_IP }} << 'EOF'
           export NVM_DIR="$HOME/.nvm". "$NVM_DIR/nvm.sh"
           cd next-cda25
           git pull
