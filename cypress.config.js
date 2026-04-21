@@ -1,15 +1,14 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
-    setupNodeEvents() {},
+    setupNodeEvents(on, config) {},
   },
   component: {
     devServer: {
+      module: "es2015",
       framework: "next",
       bundler: "webpack",
-      module: "es2015"
-      
     },
   },
 });
