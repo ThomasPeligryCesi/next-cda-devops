@@ -96,7 +96,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - run: ssh -i ${{ secrets.AZURE_PEM }} azureuser@${{ secrets.AZURE_IP }}
-      - run: cd /gits/next-cda-devops && git pull origin main && npm ci && npm run build
-      - run: pm2 restart next-app
-      - run: exit
+      - name: Multiple commands
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.AZURE_IP }}
+          username: ${{ secrets.AZURE_ID }}
+          key: ${{ secrets.AZURE_PEM }}
+          port: 22
+          script: |
+            cd /gits/next-cda-devops && git pull origin main && npm ci && npm run build
+            pm2 restart next-app
+            exit
