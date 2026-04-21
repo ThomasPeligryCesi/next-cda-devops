@@ -14,7 +14,6 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -26,9 +25,6 @@
     ],
     "strictNullChecks": true
   },
-  "ts-node": {
-    "transpileOnly": true
-  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -38,7 +34,6 @@
   ],
   "exclude": [
     "node_modules",
-    "cypress",
     "**/*.cy.*"
   ]
 }

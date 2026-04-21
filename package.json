@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
     "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
     "component": "cypress open --component",
@@ -16,18 +16,13 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@eslint/css": "^1.1.0",
-    "@eslint/js": "^9.39.4",
-    "@eslint/json": "^1.2.0",
     "@types/node": "18.0.6",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.0.6",
     "cypress": "^15.14.0",
     "eslint": "^9.39.4",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^17.5.0",
+    "eslint-config-next": "^16.2.4",
     "start-server-and-test": "^3.0.2",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^8.58.2"
+    "typescript": "^5.3.0"
   }
 }
