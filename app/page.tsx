@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          CACA BOUDINGUE{" "}
+          la, t'es dans la recette{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
