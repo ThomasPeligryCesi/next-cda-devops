@@ -107,5 +107,5 @@ jobs:
             git pull origin main
             npm ci 
             npm run build
-            pm2 restart next-app
+            pm2 restart next-app-wazo
             exit
