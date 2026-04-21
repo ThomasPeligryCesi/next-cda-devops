@@ -8,6 +8,8 @@ module.exports = defineConfig({
     devServer: {
       framework: "next",
       bundler: "webpack",
+      module: "es2015"
+      
     },
   },
 });
