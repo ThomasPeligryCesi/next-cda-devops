@@ -99,16 +99,16 @@ jobs:
       - name: Configuration de la clé SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.AZURE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.AZURE_PEM }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.AZURE_IP }} >> ~/.ssh/known_hosts
       - name: Connexion SSH et exécution de ls
         run: |
           ssh ${{ secrets.AZURE_USER }}@${{ secrets.AZURE_IP }} << 'EOF'
-            export NVM_DIR="$HOME/.nvm". "$NVM_DIR/nvm.sh"
-            cd next-cda25
-            git pull
-            npm install
-            npm run build
-            pm2 restart next-app
+          export NVM_DIR="$HOME/.nvm". "$NVM_DIR/nvm.sh"
+          cd next-cda25
+          git pull
+          npm install
+          npm run build
+          pm2 restart next-app-wazo
           EOF
