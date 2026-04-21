@@ -13,7 +13,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node16",
+    "moduleResolution": "node",
     "baseUrl": ".",
     "resolveJsonModule": true,
     "isolatedModules": true,
