@@ -102,7 +102,6 @@ jobs:
           host: ${{ secrets.AZURE_IP }}
           username: ${{ secrets.AZURE_ID }}
           key: ${{ secrets.AZURE_PEM }}
-          port: 22
           script: |
             cd /gits/next-cda-devops && git pull origin main && npm ci && npm run build
             pm2 restart next-app
