@@ -106,7 +106,7 @@ jobs:
         run: |
           ssh ${{ secrets.AZURE_ID }}@${{ secrets.AZURE_IP }} << 'EOF'
           export NVM_DIR="$HOME/.nvm". "$NVM_DIR/nvm.sh"
-          cd /home/${{ secrets.AZURE_ID }}/gits/next-cda-wazo
+          cd /home/${{ secrets.AZURE_ID }}/gits/next-cda-devops
           git pull
           npm install
           npm run build
