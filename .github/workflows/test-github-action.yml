@@ -103,6 +103,9 @@ jobs:
           username: ${{ secrets.AZURE_ID }}
           key: ${{ secrets.AZURE_PEM }}
           script: |
-            cd /gits/next-cda-devops && git pull origin main && npm ci && npm run build
+            cd /gits/next-cda-devops
+            git pull origin main
+            npm ci 
+            npm run build
             pm2 restart next-app
             exit
