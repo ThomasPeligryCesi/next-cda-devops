@@ -103,7 +103,7 @@ jobs:
           username: ${{ secrets.AZURE_ID }}
           key: ${{ secrets.AZURE_PEM }}
           script: |
-            cd /gits/next-cda-devops
+            cd /home/${{ secrets.AZURE_ID }}/gits/next-cda-devops
             git pull origin main
             npm ci 
             npm run build
