@@ -1,12 +1,22 @@
-FROM debian:12 AS nodejs-my-website
-RUN apt-get update -yq \
-&& apt-get install curl gnupg -yq \
-&& curl -sL https://deb.nodesource.com/setup_24.x | bash \
-&& apt-get install nodejs -yq \
-&& apt-get clean -y
-ADD . /app/
+FROM node:24-alpine3.22
+
+COPY . /app
+
 WORKDIR /app
-RUN npm install
+
+RUN npm install --production
 RUN npm run build
+
+FROM node:24-alpine3.22 AS next
+
+WORKDIR /app
+
+COPY --from=builder .next package*.json node_modules /app/
+
 EXPOSE 3000
-CMD npm run start
+
+COPY ./docker/next/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["npm", "run", "start"]
