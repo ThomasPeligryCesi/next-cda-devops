@@ -138,7 +138,7 @@ jobs:
       - name: Déploiement en recette
         run: |
           ssh ${{ secrets.AZURE_ID }}@${{ secrets.AZURE_IP }} << 'EOF'
-            cd production/next-cda-devops
+            cd recette/next-cda-devops
             git fetch --all
             git checkout developp
             git pull origin developp
