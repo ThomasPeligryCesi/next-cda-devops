@@ -138,8 +138,6 @@ jobs:
       - name: Déploiement en recette
         run: |
           ssh ${{ secrets.AZURE_ID }}@${{ secrets.AZURE_IP }} << 'EOF'
-            export NVM_DIR="$HOME/.nvm"
-            . "$NVM_DIR/nvm.sh"
             cd production/next-cda-devops
             git fetch --all
             git checkout developp
