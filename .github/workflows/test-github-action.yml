@@ -158,7 +158,7 @@ jobs:
       packages: write
     steps:
       - name: Set lowercase owner
-        run: echo "OWNER=$(echo '${{ github.actor }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        run: echo "OWNER=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v4
         with:
@@ -170,5 +170,5 @@ jobs:
           fetch-depth: 0
       - name: Build and Push Docker Image
         run: |
-          docker build --tag ghcr.io/${{ github.repository }}/next --target next ./
-          docker push ghcr.io/${{ github.repository }}/next
+          docker build --tag ghcr.io/${{ env.OWNER }}/next --target next ./
+          docker push ghcr.io/${{ env.OWNER }}/next
