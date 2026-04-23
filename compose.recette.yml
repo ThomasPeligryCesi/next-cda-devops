@@ -2,4 +2,4 @@ services:
   next:
     image: ghcr.io/thomaspeligrycesi/next-app-devops/next
     ports:
-      - 80:3000
+      - 3000:3000
