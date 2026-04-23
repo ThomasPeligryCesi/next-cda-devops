@@ -142,8 +142,8 @@ jobs:
             . "$NVM_DIR/nvm.sh"
             cd production/next-cda-devops
             git fetch --all
-            git checkout develop
-            git pull origin develop
+            git checkout developp
+            git pull origin developp
             sudo docker compose pull --policy=always
             sudo docker compose -f compose.recette.yml up -d
           EOF
