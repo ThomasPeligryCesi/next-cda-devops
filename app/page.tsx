@@ -11,7 +11,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          la, tu es dans la recette{" "}
+          Team jul en Y{" "}
+          <img src="https://img.20mn.fr/XzTdWGrITIukQtKUTURcYA/1444x920_jul-concert.jpg" alt="Jul Concert" />
           <code className={styles.code}>pages/index.js</code>
         </p>
 
