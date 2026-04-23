@@ -172,7 +172,7 @@ jobs:
             Dockerfile
             compose.prod.yml
             compose.yml
-        key: ${{ runner.os }}-node2-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node2-${{ hashFiles('**/package-lock.json') }}
       - name: Build and Push Docker Image
         run: |
           docker build --tag ghcr.io/${{ env.OWNER }}/next-cda-devops/next --target next ./
