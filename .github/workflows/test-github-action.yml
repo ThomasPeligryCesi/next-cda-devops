@@ -142,7 +142,7 @@ jobs:
             git fetch --all
             git checkout developp
             git pull origin developp
-            sudo docker compose pull --policy=always -f
+            sudo docker compose pull --policy=always -f compose.recette.yml
             sudo docker compose -f compose.recette.yml up -d
           EOF
 
