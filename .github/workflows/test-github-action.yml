@@ -162,17 +162,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Restore cache
-        uses: actions/cache/restore@v5
+      - uses: actions/checkout@v6
         with:
-          path: |
-            node_modules
-            .next
-            /home/runner/.cache/Cypress
-            Dockerfile
-            compose.prod.yml
-            compose.yml
-          key: ${{ runner.os }}-node2-${{ hashFiles('**/package-lock.json') }}
+          fetch-depth: 0
       - name: Build and Push Docker Image
         run: |
           docker build --tag ghcr.io/${{ env.OWNER }}/next-cda-devops/next --target next ./
