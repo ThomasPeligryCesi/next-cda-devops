@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Team jul en Y{" "}
+          Team jul en Y stp le sang{" "}
           <img src="https://img.20mn.fr/XzTdWGrITIukQtKUTURcYA/1444x920_jul-concert.jpg" alt="Jul Concert" />
           <code className={styles.code}>pages/index.js</code>
         </p>
