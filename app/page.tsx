@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          la, t'es dans la recette{" "}
+          la, tu es dans la recette{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
